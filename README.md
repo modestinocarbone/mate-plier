@@ -31,9 +31,9 @@ MATE_PLIER:> :h
 
 ### Command line mode
 ```bash
-$ ./mate_plier "3+2"
+$ mate "3+2"
 5.000000
-$ ./mate_plier "{pi+e}/2"
+$ mate "{pi+e}/2"
 2.929888
 ```
 
