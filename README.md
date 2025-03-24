@@ -37,7 +37,7 @@ $ ./mate_plier "{pi+e}/2"
 2.929888
 ```
 
-###Compilation and Installation
+### Compilation and Installation
 
 Clone this repository or download the source code and execute the makefile,
 have fun.
