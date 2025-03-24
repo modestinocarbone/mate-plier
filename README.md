@@ -4,7 +4,7 @@ MATE-PLIER is a command-line calculator program that supports basic arithmetic o
 
 ## Features
 
-- Supports constants: `pi` and `e` (with values 3.14159265 and 2.71828182).
+- Supports constants: `pi` and `e`.
 - Handles basic arithmetic operations: addition, subtraction, multiplication, division, and exponentiation.
 - Allows nested expressions using curly braces `{}`.
 - Interactive mode with real-time input or can accept expressions as command-line arguments.
