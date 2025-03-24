@@ -1,0 +1,3 @@
+ 
+-Show real time result while compiling
+-increase number of costants and operation/functions (sin, cos, arcos, arcsin, arcotg, factorial, ...)
