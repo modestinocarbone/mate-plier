@@ -1,4 +1,4 @@
-# MATE-PLIER - A Simple Calculator with Constants
+# MATE-PLIER - A Simple Expression Evaluator
 
 MATE-PLIER is a command-line calculator program that supports basic nested arithmetic operations calculations using parenthesis `(`, `)`. The program can process expressions with the following operators: `+`, `-`, `*`, `/`, and `^` (for exponentiation).
 
