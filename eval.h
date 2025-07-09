@@ -14,6 +14,7 @@ typedef enum{
 typedef struct{
 	float op[MAX_OP];
 	char sign[MAX_OP-1];
+	char single_res[MAX_OP];
 	float priority[MAX_OP-1]; 
 	float bias[MAX_OP-1]; 
 	status_t status;

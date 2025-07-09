@@ -17,6 +17,17 @@ MATE_PLIER:>3+2/7
 3.285714
 MATE_PLIER:> :q
 ```
+## Available functions
+
+|eval func| Explaination |
+| -------- | ------- |
+|exp(x)	| Exponential function (e^x) | 
+|sin(x)	| Sine of angle x (in radians) |
+|cos(x)	| Cosine of angle x (in radians)|
+|tan(x) |	Tangent of angle x (in radians)|
+|log(x) |	Base-10 logarithm of x	|
+|ln(x)	| Natural logarithm (base e) of x|
+
 
 ### Compilation and Installation
 

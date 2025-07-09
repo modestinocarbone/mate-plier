@@ -8,7 +8,8 @@
 
 void help(){
 	printf("\nRemember to use the parenthesis '(', ')'\n");
-	printf("\nAVAILABLE COMMANDS:\nMATE_PLIER:>:q = quit\nMATE_PLIER:>:h = help\nMATE_PLIER:>:c = clear\n");
+	printf("\nAVAILABLE COMMANDS:\n\nMATE_PLIER:>:q = quit\nMATE_PLIER:>:h = help\nMATE_PLIER:>:c = clear\n");
+	printf("\nfunctions:\nexp = exponentital\nsin = sine\ncos = cosine\ntan = tangent\nlog = logarithm in base 10\nln = logarithm in base e\n");
 	printf("\n");
 }
 
