@@ -13,6 +13,8 @@ MATE-PLIER is a command-line calculator program that supports basic nested arith
 ```bash
 MATE_PLIER:> 3+2+32*2
 69
+MATE_PLIER:>cos(3.14)
+-0.999999
 MATE_PLIER:>3+2/7
 3.285714
 MATE_PLIER:> :q
