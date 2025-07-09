@@ -50,7 +50,7 @@ equation fill_fields(char  *input){
 				int bias = 0;
 
 				for(int k = i ;k< len; k++){
-					if (input[k] == ')')bias--;if (input[k] == '(') bias++;
+					if (input[k] == ')')bias++;if (input[k] == '(') bias--;
 				}
 
 				if(bias<0){
@@ -219,8 +219,10 @@ int check_func(char *input) {
 				snprintf(buffer, sizeof(buffer), "%.8f", result);
 				char temp[1024];
 				strcpy(temp, &input[j]);      
-				input[i] = '\0';            
-				strcat(input, buffer);       
+				input[i] = '\0';  
+				strcat(input, "(");           
+				strcat(input, buffer);  
+				strcat(input, ")");      
 				strcat(input, temp);         
 				i = -1; 
 				break;
@@ -238,14 +240,12 @@ float eval (char *input){
 
 	//remove sapces
 	remove_space(input);
-	if(!check_func(input)){
-		printf("Error Parsing func");
-		return 0;
-	}
-
+	check_func(input);
+	remove_space(input);
 	//create the equation variable
 	equation new_eq = fill_fields (input);
 	
+
 	//check if format is valid
 	if(new_eq.status == NOT_VALID){
 		return atof(new_eq.single_res);
