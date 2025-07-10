@@ -2,9 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include "eval.h"
+
+#include <editline/readline.h>
+#include <editline/history.h>
+
 #define HIGH   "\x1B[34m"
 #define RESET "\x1B[0m" 
-#define MAX_IN 64
+
 
 void help(){
 	printf("\nRemember to use the parenthesis '(', ')'\n");
@@ -15,20 +19,22 @@ void help(){
 
 int main(int argc,char **argv){
 
-	char input_bar[MAX_IN];
-	char input_buff[MAX_IN];
-
 	if(argc ==1){
 
 	while(1){
 
-	printf("MATE_PLIER:>");
-	fflush(stdin);
-	scanf("%s", input_buff);
-	sscanf(input_buff,"%s\n",input_bar);
+
+	char* input_bar = readline("MATE_PLIER:> ");
+
+	/* Add input to history */
+	add_history(input_bar);
+
+   	
+	
 
 		//functional
 		if(strcmp(input_bar,":q")==0){
+			free(input_bar);
 			return 0;
 		}else if(strcmp(input_bar,":h")==0){
 			help();
@@ -44,7 +50,9 @@ int main(int argc,char **argv){
 				printf(HIGH "%f\n" RESET,res);
 					
 		}
-		
+	
+	free(input_bar);
+
 	}
 	
 	}
