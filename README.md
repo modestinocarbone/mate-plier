@@ -32,6 +32,14 @@ MATE_PLIER:>:q
 |log(x) |	Base-10 logarithm of x	|
 |ln(x)	| Natural logarithm (base e) of x|
 
+## Dependencies
+
+Make sure the libedit development library is installed. On Ubuntu/Debian, use the following command:
+
+```bash
+sudo apt-get update
+sudo apt-get install libedit-dev
+```
 
 ### Compilation and Installation
 
