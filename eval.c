@@ -7,6 +7,7 @@
 const char func[] = "*/+-^"; 
 const char *adv_func[] = {"exp", "sin", "cos", "tan", "log", "ln"};
 
+//remove useless parenthesis 
 void remove_par(char *str) {
     int i = 0, j = 0;
 
@@ -20,6 +21,7 @@ void remove_par(char *str) {
     str[j] = '\0';
 }
 
+//remove post-processing and user spaces
 void remove_space(char *str) {
     int i = 0, j = 0;
 
@@ -33,8 +35,7 @@ void remove_space(char *str) {
     str[j] = '\0';
 }
 
-
-
+//fill equation fields composed by operator and operations
 equation fill_fields(char  *input){
 
 	int check = 0;
@@ -60,7 +61,6 @@ equation fill_fields(char  *input){
 				}
 				new_eq.bias[check] = bias;
 
-
 				check++;
 				new_eq.n_op++;
 			}
@@ -81,7 +81,6 @@ equation fill_fields(char  *input){
 	}
 
 	if(check == 0){
-		//printf("invalid sintax [No operation detected]\n");
 		strcpy(new_eq.single_res, input);
 		new_eq.status = NOT_VALID;
 	}else{
@@ -92,6 +91,7 @@ equation fill_fields(char  *input){
 	return new_eq;
 }
 
+//assign priority of operations
 equation gen_priority(equation my_eq){
 
 	for(int i=0;i<my_eq.n_op;i++){
@@ -112,7 +112,7 @@ equation gen_priority(equation my_eq){
 
 }
 
-
+//recieve the data structure and fill equation.res with the proper result 
 equation solve(equation my_eq){
 
 	float tmp = -1;
@@ -172,6 +172,7 @@ equation solve(equation my_eq){
 	return my_eq;
 }
 
+//check if adv_func are present in the string: resolve their subfields and substitute them with the correct result
 int check_func(char *input) {
 
  	char buffer[1024];
@@ -217,13 +218,14 @@ int check_func(char *input) {
 				
 				//concatenate result
 				snprintf(buffer, sizeof(buffer), "%.8f", result);
-				char temp[1024];
+				char temp[4096];
 				strcpy(temp, &input[j]);      
 				input[i] = '\0';  
 				strcat(input, "(");           
 				strcat(input, buffer);  
 				strcat(input, ")");      
-				strcat(input, temp);         
+				strcat(input, temp);  
+      
 				i = -1; 
 				break;
 

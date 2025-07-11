@@ -6,9 +6,9 @@
 #include <editline/readline.h>
 #include <editline/history.h>
 
-#define HIGH   "\x1B[34m"
-#define RESET "\x1B[0m" 
-
+#define HIGH   	"\x1B[34m"
+#define RESET 	"\x1B[0m" 
+#define MAX_LEN 4096
 
 void help(){
 	printf("\nRemember to use the parenthesis '(', ')'\n");
@@ -41,8 +41,9 @@ int main(int argc,char **argv){
 		}else if(strcmp(input_bar,":c")==0){
 			system("clear");
 		}else{
-
-			float res =  eval(input_bar);
+			char extended_buffer[4096];
+  			strcpy(extended_buffer, input_bar);
+			float res =  eval(extended_buffer);
 
 			if (res - (int)res == 0) 
 				printf(HIGH "%d\n" RESET, (int)res);

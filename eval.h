@@ -3,14 +3,14 @@
 
 #define MAX_OP 20
 
-
-
+//equation possible states
 typedef enum{
 	VALID,
 	NOT_VALID,
 	SOLVED
 }status_t;
 
+//equation structure
 typedef struct{
 	float op[MAX_OP];
 	char sign[MAX_OP-1];
@@ -22,7 +22,7 @@ typedef struct{
 	float res;
 }equation;
 
-
+//functions
 void remove_par(char *str);
 equation fill_fields(char  *input);
 equation gen_priority(equation my_eq);
